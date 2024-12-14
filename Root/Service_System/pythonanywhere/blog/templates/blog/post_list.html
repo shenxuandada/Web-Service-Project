@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <h2>현재 시간당 인파：{{ hourly_count }}</h2>  <!-- 显示人流量统计 -->
+
+  {% for post in posts %}
+    <div class="post">
+      <div class="date">{{ post.published_date }}</div>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
+      <img src="{{ post.image.url }}" class="rounded intruder-image-list" alt="{{ post.title }}">
+    </div>
+  {% endfor %}
+{% endblock %}
